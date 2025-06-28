@@ -14,3 +14,12 @@ Run the application with:
 python main.py
 ```
 
+## Tests
+
+PyTest is used for the small test suite located in the `tests/` folder.
+Run the tests with:
+
+```bash
+pytest -q
+```
+

@@ -5,10 +5,12 @@ from database.db import get_connection, init_db
 
 
 def hash_password(password: str) -> str:
+    """Return the SHA-256 hash of ``password``."""
     return sha256(password.encode("utf-8")).hexdigest()
 
 
 def authenticate(username: str, password: str) -> bool:
+    """Return ``True`` if the credentials match an entry in the database."""
     init_db()
     conn = get_connection()
     cursor = conn.cursor()
@@ -25,6 +27,7 @@ def authenticate(username: str, password: str) -> bool:
 
 
 def prompt_login() -> bool:
+    """Prompt for credentials via the console and authenticate the user."""
     username = input("Username: ")
     password = getpass("Password: ")
     return authenticate(username, password)
