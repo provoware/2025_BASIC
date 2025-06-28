@@ -9,6 +9,7 @@
 - Set up basic project structure
 - Created dashboard with left and right sidebars
 - Integrated login dialog and automatic user directory creation
+- Added demo plugin example
 
 ## Finished components
 - GUI framework using PyQt5

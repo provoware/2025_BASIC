@@ -98,6 +98,15 @@ def run():
     window.show()
 
     # Load plugins (if any)
-    load_plugins()
+    for plugin in load_plugins():
+        if hasattr(plugin, "load"):
+            try:
+                plugin.load(window)
+            except Exception as exc:
+                QtWidgets.QMessageBox.warning(
+                    window,
+                    "Pluginfehler",
+                    f"Plugin {plugin.__name__} konnte nicht geladen werden: {exc}",
+                )
 
     return app.exec_()
