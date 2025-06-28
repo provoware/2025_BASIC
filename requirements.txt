@@ -1,0 +1,8 @@
+# GUI library
+PyQt5>=5.15
+
+# ORM / database
+SQLAlchemy>=1.4
+
+# Plugin system
+pluggy>=1.0
