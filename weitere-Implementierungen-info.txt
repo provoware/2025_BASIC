@@ -1,0 +1,118 @@
+# weitere zukünftige Implementierungen 
+#
+Projektzusammenfassung: „Benutzerbasiertes Ordner- und Struktur-Tool mit Debug-Engine“
+🔧 Systemüberblick
+Ein modulares, offlinefähiges Tool für Linux mit GUI (PyQt6), das:
+
+Benutzer mit 4-stelligem PIN verwaltet
+
+Für jeden Benutzer eine deutsche Standard-Ordnerstruktur anlegt
+
+Debug-Modus mit Auto-Repair, Tests und detaillierten Logs unterstützt
+
+Plug-in-fähig ist
+
+Einstellungen persistent speichert
+
+Datenbankintegration zur Verwaltung benutzerdefinierter Inhalte (z. B. Einträge mit Titel/Text)
+
+📂 Aktuelle Verzeichnisstruktur
+bash
+Kopieren
+Bearbeiten
+/config/                   # Einstellungen & DB-Datei
+    nutzer.db
+    einstellungen.json
+
+/nutzerbereiche/          # Benutzerverzeichnisse
+    <benutzername>/
+
+/logs/                    # Reparatur- & Debug-Protokolle
+    auto_repair.log
+    debug_details.log
+
+/modules/                 # Zentrale Logikmodule
+    db_controller.py
+
+/plugins/                 # Plug-in-System vorbereitet
+    <plugin_name>/
+        plugin.json
+        plugin_main.py
+
+/tests/                   # Geplant: strukturiert nach Szenarien & Zeit
+    ...
+
+/update/                  # Update-Logik vorbereitet
+
+/main.py                  # Einstiegspunkt
+/plugin_loader.py         # Dynamisches Laden externer Module
+/settings_tab.py          # GUI-Modul für Einstellungen
+✅ Implementierte Funktionen
+Wizard (Login-GUI):
+
+Benutzeranmeldung per PIN
+
+Debug-Modus aktivierbar (persistent)
+
+Eingabemaske visuell eingerahmt („Anmeldung“)
+
+Optisch konsistent (LOGIN-Button hervorgehoben)
+
+Debug-Modus:
+
+Führt Auto-Repair von Ordnerstrukturen durch
+
+Schreibt in debug_details.log mit Lösungshinweisen
+
+Trennung von Eingabefehlern und Systemdefekten
+
+In den Einstellungen: zwei Blöcke für Systemtests (oben) und Hilfsaktionen (unten)
+
+Benutzer-Datenbank:
+
+Modul: db_controller.py
+
+Speichert: Benutzer + PIN
+
+Inhalte: Tabelle eintraege mit titel, kurztext, volltext
+
+Optional: zusätzliche Felder durch zusatzfelder.json erweiterbar
+
+Einstellungen (GUI-Tab):
+
+Debug-Modus (an/aus)
+
+Sprache (Deutsch/Englisch)
+
+Nutzerbereich-Pfad konfigurierbar
+
+Speichert persistente Optionen
+
+Plug-in-System:
+
+Lädt dynamisch Plug-ins aus plugins/
+
+Definition via plugin.json, Logik via plugin_main.py
+
+📌 Nächste Schritte (für Weiterentwicklung)
+Einstellungs-GUI mit Debug-Testbereichen fertigstellen (Widgets für Auto-Tests und Helfer)
+
+Datenbankmodul um Inhalte-Tabelle erweitern (Einträge, optional zusätzliche Felder)
+
+Hauptmodul mit Benutzerkontext starten (nach Login geerbter Zustand)
+
+Plugin-Demo entwickeln (z. B. Anzeige-Tab oder zusätzlicher Export)
+
+Tests einbauen und kapseln in /tests/ mit Szenarien-IDs
+
+🔁 Letzte Iterationslogeinträge
+„Debug-Modus aktiviert, Auto-Repair eingebunden“
+
+„Plugin-Loader erstellt“
+
+„Einstellungs-Tab vorbereitet mit Sprache, Debug, Pfad“
+
+„Login-GUI optisch eingerahmt, Eingabefelder getrennt von persistenter Auswahl“
+
+„db_controller ausgelagert, eintraege-Tabelle definiert (Basis)“
+
