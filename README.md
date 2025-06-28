@@ -1,6 +1,10 @@
 # 2025_BASIC
 
-This project provides a simple GUI application template with an SQLite database and user authentication. The code is located under the `src/` directory.
+This project provides a simple GUI application template with an SQLite database
+and user authentication. The code is located under the `src/` directory.
+
+The main window presents a basic dashboard with collapsible sidebars on the left
+and right. The structure is modular so that plugins can extend the interface.
 
 ## Packages
 
@@ -8,9 +12,17 @@ This project provides a simple GUI application template with an SQLite database 
 - **database** – handles SQLite connections and initial schema creation.
 - **auth** – simple user login utilities.
 
+Development tasks are tracked in `info-todo.txt`.
+
 Run the application with:
 
 ```bash
 python main.py
+```
+
+To run tests (once they are added), execute:
+
+```bash
+pytest -q
 ```
 

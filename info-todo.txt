@@ -1,0 +1,14 @@
+# Project TODO
+
+## Upcoming tasks
+- Implement plugin examples
+- Write automated tests
+- Enhance user login flow
+
+## Completed tasks
+- Set up basic project structure
+- Created dashboard with left and right sidebars
+
+## Finished components
+- GUI framework using PyQt5
+- SQLite database initialization

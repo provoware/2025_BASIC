@@ -1,4 +1,4 @@
-from PyQt5 import QtWidgets
+from PyQt5 import QtWidgets, QtCore
 import importlib
 import pkgutil
 
@@ -23,7 +23,31 @@ def run():
     app = QtWidgets.QApplication([])
     window = QtWidgets.QMainWindow()
     window.setWindowTitle("2025_BASIC App")
-    window.resize(400, 300)
+    window.resize(800, 600)
+
+    # Central dashboard widget
+    dashboard = QtWidgets.QWidget()
+    center_layout = QtWidgets.QVBoxLayout(dashboard)
+    center_label = QtWidgets.QLabel("Dashboard", alignment=QtCore.Qt.AlignCenter)
+    center_layout.addWidget(center_label)
+    window.setCentralWidget(dashboard)
+
+    # Left sidebar (dockable)
+    left_dock = QtWidgets.QDockWidget("Links", window)
+    left_contents = QtWidgets.QListWidget()
+    left_contents.addItem("Option 1")
+    left_contents.addItem("Option 2")
+    left_dock.setWidget(left_contents)
+    window.addDockWidget(QtCore.Qt.LeftDockWidgetArea, left_dock)
+
+    # Right sidebar (dockable)
+    right_dock = QtWidgets.QDockWidget("Rechts", window)
+    right_contents = QtWidgets.QListWidget()
+    right_contents.addItem("Info 1")
+    right_contents.addItem("Info 2")
+    right_dock.setWidget(right_contents)
+    window.addDockWidget(QtCore.Qt.RightDockWidgetArea, right_dock)
+
     window.show()
 
     # Load plugins (if any)
