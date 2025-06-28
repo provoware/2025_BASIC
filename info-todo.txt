@@ -3,12 +3,14 @@
 ## Upcoming tasks
 - Implement plugin examples
 - Write automated tests
-- Enhance user login flow
+- Improve folder management
 
 ## Completed tasks
 - Set up basic project structure
 - Created dashboard with left and right sidebars
+- Integrated login dialog and automatic user directory creation
 
 ## Finished components
 - GUI framework using PyQt5
 - SQLite database initialization
+- Login dialog and folder creation
