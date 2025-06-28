@@ -17,9 +17,9 @@ python main.py
 ## Tests
 
 PyTest is used for the small test suite located in the `tests/` folder.
-Run the tests with:
+Run the tests with verbose output using:
 
 ```bash
-pytest -q
+pytest -vv
 ```
 
