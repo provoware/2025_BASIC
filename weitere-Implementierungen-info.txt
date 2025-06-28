@@ -2,9 +2,9 @@
 #
 Projektzusammenfassung: „Benutzerbasiertes Ordner- und Struktur-Tool mit Debug-Engine“
 🔧 Systemüberblick
-Ein modulares, offlinefähiges Tool für Linux mit GUI (PyQt6), das:
+Ein modulares, offlinefähiges Tool für Linux mit GUI (PyQt5), das:
 
-Benutzer mit 4-stelligem PIN verwaltet
+Benutzer mit Benutzername und Passwort verwaltet
 
 Für jeden Benutzer eine deutsche Standard-Ordnerstruktur anlegt
 
@@ -50,7 +50,7 @@ Bearbeiten
 ✅ Implementierte Funktionen
 Wizard (Login-GUI):
 
-Benutzeranmeldung per PIN
+Benutzeranmeldung mit Passwort
 
 Debug-Modus aktivierbar (persistent)
 
@@ -72,7 +72,7 @@ Benutzer-Datenbank:
 
 Modul: db_controller.py
 
-Speichert: Benutzer + PIN
+Speichert: Benutzer + Passwort-Hash
 
 Inhalte: Tabelle eintraege mit titel, kurztext, volltext
 
