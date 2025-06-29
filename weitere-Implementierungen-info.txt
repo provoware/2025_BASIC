@@ -101,7 +101,7 @@ Datenbankmodul um Inhalte-Tabelle erweitern (Einträge, optional zusätzliche Fe
 
 Hauptmodul mit Benutzerkontext starten (nach Login geerbter Zustand)
 
-Plugin-Demo entwickeln (z. B. Anzeige-Tab oder zusätzlicher Export)
+Plugin-Demo bereitgestellt (plugins/sample.py für einfachen Menü-Eintrag)
 
 Tests einbauen und kapseln in /tests/ mit Szenarien-IDs
 

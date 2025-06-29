@@ -6,7 +6,7 @@ from pathlib import Path
 from auth.login import authenticate
 
 
-def load_plugins(package_name="plugins"):
+def load_plugins(package_name: str = "plugins"):
     """Load and return plugin modules from the given package."""
     plugins = []
     try:
@@ -98,6 +98,11 @@ def run():
     window.show()
 
     # Load plugins (if any)
-    load_plugins()
+    for mod in load_plugins():
+        if hasattr(mod, "register"):
+            try:
+                mod.register(window)
+            except Exception as exc:  # pragma: no cover - simple demo
+                print(f"Plugin {mod.__name__} failed: {exc}")
 
     return app.exec_()

@@ -30,5 +30,7 @@ pytest -q
 ```
 
 Plugin modules placed under `plugins/` are loaded automatically at startup. This
-provides an easy way to extend the GUI without modifying existing code.
+provides an easy way to extend the GUI without modifying existing code. A simple
+demo plugin is included in `plugins/sample.py` which adds a "Sample" action to
+the main menu.
 
