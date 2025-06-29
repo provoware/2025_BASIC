@@ -1,6 +1,12 @@
 # 2025_BASIC
 
-This project provides a simple GUI application template with an SQLite database and user authentication. The code is located under the `src/` directory.
+A starter project for simple desktop tools written in Python. It provides a minimal GUI scaffold with SQLite persistence and basic user login.
+
+## Purpose and Usage
+
+* **Goal:** Offer a lightweight template for data-driven desktop applications.
+* **Quick start:** Install dependencies with `pip install -r requirements.txt` and run `python main.py`.
+* **License:** Released under the MIT license (see `LICENSE` for details).
 
 ## Packages
 
@@ -13,4 +19,10 @@ Run the application with:
 ```bash
 python main.py
 ```
+
+## Tips for Beginners
+
+- Experiment with the layout in `src/gui` to see how the interface changes.
+- Use a visual SQLite tool to inspect the database file created by the app.
+- Browse through the code comments to learn how the pieces fit together.
 
