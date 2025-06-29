@@ -1,118 +1,53 @@
-# weitere zukünftige Implementierungen 
-#
-Projektzusammenfassung: „Benutzerbasiertes Ordner- und Struktur-Tool mit Debug-Engine“
-🔧 Systemüberblick
-Ein modulares, offlinefähiges Tool für Linux mit GUI (PyQt6), das:
+# Weitere zukünftige Implementierungen
 
-Benutzer mit 4-stelligem PIN verwaltet
+Projektzusammenfassung: "Benutzerbasiertes Ordner- und Struktur-Tool mit Debug-Engine"
 
-Für jeden Benutzer eine deutsche Standard-Ordnerstruktur anlegt
+## Systemüberblick
+Ein modulares, offlinefähiges Tool für Linux mit GUI (PyQt6), das
+Benutzer mit 4-stelligem PIN verwaltet, für jeden Benutzer eine deutsche
+Standard-Ordnerstruktur anlegt und einen Debug-Modus mit Auto-Repair,
+Tests und detaillierten Logs bereitstellt. Einstellungen werden
+persistent gespeichert und durch Plug-ins erweiterbar.
 
-Debug-Modus mit Auto-Repair, Tests und detaillierten Logs unterstützt
-
-Plug-in-fähig ist
-
-Einstellungen persistent speichert
-
-Datenbankintegration zur Verwaltung benutzerdefinierter Inhalte (z. B. Einträge mit Titel/Text)
-
-📂 Aktuelle Verzeichnisstruktur
-bash
-Kopieren
-Bearbeiten
-/config/                   # Einstellungen & DB-Datei
+## Aktuelle Verzeichnisstruktur
+```
+/config/                   # Einstellungen & Datenbank
     nutzer.db
     einstellungen.json
-
 /nutzerbereiche/          # Benutzerverzeichnisse
     <benutzername>/
-
-/logs/                    # Reparatur- & Debug-Protokolle
+/logs/                    # Reparatur- und Debug-Protokolle
     auto_repair.log
     debug_details.log
-
 /modules/                 # Zentrale Logikmodule
     db_controller.py
-
-/plugins/                 # Plug-in-System vorbereitet
+/plugins/                 # Plug-in-System
     <plugin_name>/
         plugin.json
         plugin_main.py
-
-/tests/                   # Geplant: strukturiert nach Szenarien & Zeit
-    ...
-
-/update/                  # Update-Logik vorbereitet
-
+/tests/                   # Geplante Tests
+/update/                  # Update-Logik
 /main.py                  # Einstiegspunkt
-/plugin_loader.py         # Dynamisches Laden externer Module
+/plugin_loader.py         # Lädt Plug-ins
 /settings_tab.py          # GUI-Modul für Einstellungen
-✅ Implementierte Funktionen
-Wizard (Login-GUI):
+```
 
-Benutzeranmeldung per PIN
+## Implementierte Funktionen
+- Wizard (Login-GUI) mit PIN-Anmeldung
+- Persistenter Debug-Modus mit Auto-Repair und Log-Ausgabe
+- Getrennte Eingabe- und Systemfehlerbehandlung
+- Einstellungsbereich für Sprache und Pfadoptionen
+- Plug-in-System mit `plugin.json` und `plugin_main.py`
+- Datenbankmodul `db_controller.py` speichert Benutzer und Inhalte
 
-Debug-Modus aktivierbar (persistent)
+## Nächste Schritte
+- Einstellungs-GUI um Debug-Testbereiche erweitern
+- Inhaltstabelle in der Datenbank ausbauen
+- Plugin-Demo entwickeln (z.B. zusätzlicher Export-Tab)
+- Tests in `tests/` mit Szenarien-IDs erstellen
 
-Eingabemaske visuell eingerahmt („Anmeldung“)
-
-Optisch konsistent (LOGIN-Button hervorgehoben)
-
-Debug-Modus:
-
-Führt Auto-Repair von Ordnerstrukturen durch
-
-Schreibt in debug_details.log mit Lösungshinweisen
-
-Trennung von Eingabefehlern und Systemdefekten
-
-In den Einstellungen: zwei Blöcke für Systemtests (oben) und Hilfsaktionen (unten)
-
-Benutzer-Datenbank:
-
-Modul: db_controller.py
-
-Speichert: Benutzer + PIN
-
-Inhalte: Tabelle eintraege mit titel, kurztext, volltext
-
-Optional: zusätzliche Felder durch zusatzfelder.json erweiterbar
-
-Einstellungen (GUI-Tab):
-
-Debug-Modus (an/aus)
-
-Sprache (Deutsch/Englisch)
-
-Nutzerbereich-Pfad konfigurierbar
-
-Speichert persistente Optionen
-
-Plug-in-System:
-
-Lädt dynamisch Plug-ins aus plugins/
-
-Definition via plugin.json, Logik via plugin_main.py
-
-📌 Nächste Schritte (für Weiterentwicklung)
-Einstellungs-GUI mit Debug-Testbereichen fertigstellen (Widgets für Auto-Tests und Helfer)
-
-Datenbankmodul um Inhalte-Tabelle erweitern (Einträge, optional zusätzliche Felder)
-
-Hauptmodul mit Benutzerkontext starten (nach Login geerbter Zustand)
-
-Plugin-Demo entwickeln (z. B. Anzeige-Tab oder zusätzlicher Export)
-
-Tests einbauen und kapseln in /tests/ mit Szenarien-IDs
-
-🔁 Letzte Iterationslogeinträge
-„Debug-Modus aktiviert, Auto-Repair eingebunden“
-
-„Plugin-Loader erstellt“
-
-„Einstellungs-Tab vorbereitet mit Sprache, Debug, Pfad“
-
-„Login-GUI optisch eingerahmt, Eingabefelder getrennt von persistenter Auswahl“
-
-„db_controller ausgelagert, eintraege-Tabelle definiert (Basis)“
-
+## Nützliche Befehle
+- Anwendung starten: `python main.py`
+- Abhängigkeiten installieren: `pip install -r requirements.txt`
+- Tests ausführen: `pytest -q`
+- Code formatieren: `black .` und `isort .`

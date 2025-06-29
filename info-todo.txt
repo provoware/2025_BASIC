@@ -1,16 +1,18 @@
 # Project TODO
 
 ## Upcoming tasks
-- Implement plugin examples
-- Write automated tests
-- Improve folder management
+- Implement plugin examples under `plugins/`
+- Write automated tests with `pytest`
+- Improve folder management for user files
 
 ## Completed tasks
-- Set up basic project structure
-- Created dashboard with left and right sidebars
-- Integrated login dialog and automatic user directory creation
-
-## Finished components
-- GUI framework using PyQt5
+- Basic project structure with PyQt5 GUI
+- Dashboard with left and right sidebars
+- Login dialog with automatic user directory creation
 - SQLite database initialization
-- Login dialog and folder creation
+
+## Helpful commands
+- Start the app: `python main.py`
+- Run tests: `pytest -q`
+- Install requirements: `pip install -r requirements.txt`
+- Format code: `black .` and `isort .`
