@@ -1,0 +1,51 @@
+# Entwicklerinformationen zu 2025_BASIC
+
+Dieses Dokument fasst den aktuellen Stand des Projekts zusammen und richtet sich an neue Entwicklerinnen und Entwickler. Auch interessierte Laien finden hier eine schnelle Übersicht.
+
+## Projektüberblick
+- Python 3.10, GUI mit PyQt5
+- SQLite-Datenbank `app.db`
+- Quellcode unter `src/`
+
+## Hauptmodule
+- `src/gui` – Startet das Hauptfenster und lädt optionale Plug-ins
+- `src/auth` – Verwaltet Login und Passworthashes
+- `src/database` – Erstellt die Datenbank und stellt Verbindungen bereit
+
+## Verzeichnisstruktur (Auszug)
+```text
+.
+├── README.md
+├── main.py
+├── src/
+│   ├── auth/
+│   ├── database/
+│   └── gui/
+```
+
+## Aktueller Funktionsumfang
+- Login-Dialog mit Benutzername und Passwort
+- Automatische Erstellung eines Benutzerordners unter `users/`
+- Einfaches Plug-in-System (Module im Ordner `plugins/` werden automatisch geladen)
+
+## Offene Punkte
+- Beispiel-Plug-ins entwickeln
+- Tests unter `tests/` einführen
+- Verbesserte Verwaltung der Nutzerdateien
+
+## Hilfreiche Befehle
+- Abhängigkeiten installieren: `pip install -r requirements.txt`
+- Anwendung starten: `python main.py`
+- Code formatieren: `black .` und `isort .`
+- Spätere Tests ausführen: `pytest -q`
+
+## Tipps für Einsteiger
+- Erstelle eine virtuelle Umgebung mit `python -m venv venv` und aktiviere sie vor der Installation der Abhängigkeiten.
+- Lies die Kommentare im Quellcode, um die Struktur nachzuvollziehen.
+- Erweiterungen können über eigene Module im Ordner `plugins/` eingebunden werden.
+
+### Weitere Hinweise für Laien
+- Sichere dir einen kostenlosen GitHub-Account und fork dieses Repository, um eigene Experimente zu machen.
+- Nutze einfache Editoren wie VS Code oder Thonny, falls du erst wenig Programmiererfahrung hast.
+- Die offizielle Python-Dokumentation unter <https://docs.python.org/de/> bietet einen guten Einstieg.
+
