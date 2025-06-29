@@ -116,3 +116,5 @@ Tests einbauen und kapseln in /tests/ mit Szenarien-IDs
 
 „db_controller ausgelagert, eintraege-Tabelle definiert (Basis)“
 
+„Einfache Tests für Datenbank und Login angelegt“
+

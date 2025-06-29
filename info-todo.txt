@@ -2,13 +2,14 @@
 
 ## Upcoming tasks
 - Implement plugin examples
-- Write automated tests
 - Improve folder management
 
 ## Completed tasks
 - Set up basic project structure
 - Created dashboard with left and right sidebars
 - Integrated login dialog and automatic user directory creation
+- Cleaned `.gitignore` file
+- Added automated tests for database and login
 
 ## Finished components
 - GUI framework using PyQt5
