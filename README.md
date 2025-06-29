@@ -23,6 +23,12 @@ Run the application with:
 python main.py
 ```
 
+For development with logging and automatic test execution run:
+
+```bash
+python dev_start.py
+```
+
 To run the tests, execute:
 
 ```bash
