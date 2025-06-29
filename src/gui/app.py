@@ -2,10 +2,23 @@ from PyQt5 import QtWidgets, QtCore
 import importlib
 import pkgutil
 from pathlib import Path
+import datetime
 
 from auth.login import authenticate
 
 settings = QtCore.QSettings("2025_BASIC", "app")
+
+LOG_DIR = Path("logs")
+
+
+def ensure_log_directory():
+    """Create logging directory and default log files."""
+    LOG_DIR.mkdir(exist_ok=True)
+    for name in ["auto_repair.log", "debug_details.log"]:
+        file_path = LOG_DIR / name
+        if not file_path.exists():
+            file_path.touch()
+    return LOG_DIR
 
 
 def get_setting(key: str, default=None):
@@ -117,8 +130,13 @@ def run():
     user_root = Path(get_setting("user_path", "users"))
     ensure_user_folder(username, user_root)
     debug_enabled = bool(get_setting("debug", False))
+    ensure_log_directory()
     if debug_enabled:
         print("Debug-Modus aktiviert")
+        log_file = LOG_DIR / "debug_details.log"
+        with log_file.open("a", encoding="utf-8") as fh:
+            timestamp = datetime.datetime.now().isoformat()
+            fh.write(f"{timestamp}: Debug-Modus aktiviert\n")
 
     window = QtWidgets.QMainWindow()
     window.setWindowTitle("2025_BASIC App")

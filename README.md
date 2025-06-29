@@ -7,6 +7,9 @@ starting the app you will be asked to log in. On successful login a directory
 includes default `Dokumente` and `Bilder` subdirectories so new users have a
 basic structure in place.
 
+When debug mode is active, log files are written to a `logs/` directory in the
+project root.
+
 The main window presents a basic dashboard with collapsible sidebars on the left
 and right. An additional "Einstellungen" tab lets you enable a debug mode and
 change the user folder path. The structure is modular so that plugins placed in

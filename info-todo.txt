@@ -10,6 +10,7 @@
 - Integrated login dialog and automatic user directory creation
 - Improved folder management with default "Dokumente" and "Bilder" folders
 - Added settings tab for debug mode and user path management
+- Created log directory with debug_details.log and auto_repair.log
 
 ## Finished components
 - GUI framework using PyQt5
