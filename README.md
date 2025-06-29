@@ -23,11 +23,12 @@ Run the application with:
 python main.py
 ```
 
-To run tests (once they are added), execute:
+To run the tests, execute:
 
 ```bash
 pytest -q
 ```
+All tests are located under the `tests/` directory.
 
 Plugin modules placed under `plugins/` are loaded automatically at startup. This
 provides an easy way to extend the GUI without modifying existing code.
