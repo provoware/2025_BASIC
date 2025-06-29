@@ -23,12 +23,21 @@ Run the application with:
 python main.py
 ```
 
-To run tests (once they are added), execute:
+For development with logging and automatic test execution run:
+
+```bash
+python dev_start.py
+```
+
+To run the tests, execute:
 
 ```bash
 pytest -q
 ```
+All tests are located under the `tests/` directory.
 
 Plugin modules placed under `plugins/` are loaded automatically at startup. This
 provides an easy way to extend the GUI without modifying existing code.
+An example plugin `example_tab.py` is included to demonstrate how new docks can
+be added dynamically.
 
