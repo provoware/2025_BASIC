@@ -48,9 +48,14 @@ class LoginDialog(QtWidgets.QDialog):
 
 
 def ensure_user_folder(username: str, root: Path = Path("users")):
-    """Create a data folder for the given user if it doesn't exist."""
+    """Create a data folder for the given user along with standard subfolders."""
     user_dir = root / username
     user_dir.mkdir(parents=True, exist_ok=True)
+
+    # automatically create some common subfolders
+    for name in ["Dokumente", "Bilder"]:
+        (user_dir / name).mkdir(exist_ok=True)
+
     return user_dir
 
 

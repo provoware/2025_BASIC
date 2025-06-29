@@ -3,7 +3,9 @@
 This project provides a simple GUI application template with an SQLite database
 and user authentication. The code is located under the `src/` directory. When
 starting the app you will be asked to log in. On successful login a directory
-`users/<name>` is created automatically for storing user files.
+`users/<name>` is created automatically for storing user files. The folder now
+includes default `Dokumente` and `Bilder` subdirectories so new users have a
+basic structure in place.
 
 The main window presents a basic dashboard with collapsible sidebars on the left
 and right. The structure is modular so that plugins placed in a `plugins/`
