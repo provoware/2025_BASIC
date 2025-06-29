@@ -1,0 +1,18 @@
+cat > .gitignore << 'EOF'
+# Virtuelle Umgebung
+venv/
+
+# Bytecode-Caches
+__pycache__/
+*.py[cod]
+
+# SQLite-Datenbank (tmp)
+app.db
+
+# Log-Dateien
+*.log
+
+# Coverage-Reports
+.coverage
+htmlcov/
+EOF
