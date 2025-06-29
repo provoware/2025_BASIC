@@ -8,8 +8,9 @@ includes default `Dokumente` and `Bilder` subdirectories so new users have a
 basic structure in place.
 
 The main window presents a basic dashboard with collapsible sidebars on the left
-and right. The structure is modular so that plugins placed in a `plugins/`
-package can extend the interface.
+and right. An additional "Einstellungen" tab lets you enable a debug mode and
+change the user folder path. The structure is modular so that plugins placed in
+a `plugins/` package can extend the interface.
 
 ## Packages
 
