@@ -23,7 +23,7 @@ Run the application with:
 python main.py
 ```
 
-To run tests (once they are added), execute:
+To run the unit tests, execute:
 
 ```bash
 pytest -q
