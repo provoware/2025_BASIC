@@ -98,7 +98,10 @@ def run():
 
     window.show()
 
-    # Load plugins (if any)
-    load_plugins()
+    # Load plugins (if any) and allow them to extend the GUI
+    for plugin in load_plugins():
+        register = getattr(plugin, "register", None)
+        if callable(register):
+            register(window)
 
     return app.exec_()
