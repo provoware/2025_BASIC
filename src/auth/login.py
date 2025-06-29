@@ -12,10 +12,7 @@ def authenticate(username: str, password: str) -> bool:
     init_db()
     conn = get_connection()
     cursor = conn.cursor()
-    cursor.execute(
-        "SELECT password FROM users WHERE username=?",
-        (username,)
-    )
+    cursor.execute("SELECT password FROM users WHERE username=?", (username,))
     row = cursor.fetchone()
     conn.close()
     if not row:

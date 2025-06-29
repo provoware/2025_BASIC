@@ -32,3 +32,15 @@ pytest -q
 Plugin modules placed under `plugins/` are loaded automatically at startup. This
 provides an easy way to extend the GUI without modifying existing code.
 
+
+## Updating the repository
+
+To publish your changes on GitHub, follow these beginner-friendly steps:
+
+1. Ensure all dependencies are installed: `pip install -r requirements.txt`.
+2. Make your code changes and commit them locally with `git commit -m "feat: <your message>"`.
+3. Pull the latest changes from GitHub: `git pull origin main`.
+4. Push your branch to GitHub: `git push origin <branch-name>`.
+5. On GitHub, open a Pull Request and wait for automated tests to finish.
+
+After the Pull Request is merged, your project will be up to date online.
