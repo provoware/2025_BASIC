@@ -41,3 +41,9 @@ provides an easy way to extend the GUI without modifying existing code.
 An example plugin `example_tab.py` is included to demonstrate how new docks can
 be added dynamically.
 
+To create your own plugin:
+
+1. Add a new Python file to the `plugins/` directory.
+2. Implement a `register(window)` function that modifies the GUI.
+3. Restart the application to see your changes.
+
