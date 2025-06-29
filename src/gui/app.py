@@ -1,7 +1,8 @@
-from PyQt5 import QtWidgets, QtCore
 import importlib
 import pkgutil
 from pathlib import Path
+
+from PyQt5 import QtCore, QtWidgets
 
 from auth.login import authenticate
 

@@ -32,3 +32,23 @@ pytest -q
 Plugin modules placed under `plugins/` are loaded automatically at startup. This
 provides an easy way to extend the GUI without modifying existing code.
 
+## Tips for Beginners
+
+1. **Create a virtual environment** to keep dependencies isolated:
+
+   ```bash
+   python -m venv .venv
+   source .venv/bin/activate
+   pip install -r requirements.txt
+   ```
+
+2. **Run the application** from the repository root with:
+
+   ```bash
+   python main.py
+   ```
+
+3. **Explore the code** in the `src/` directory to see how the GUI, database,
+   and authentication pieces work together. Small changes, such as adding new
+   menu items, are a great way to learn.
+
