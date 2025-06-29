@@ -1,6 +1,6 @@
 # AGENTS.md
 
-**Version:** 1.1.0\
+**Version:** 1.2.0\
 **Last-Updated:** 2025-06-29
 
 ---
@@ -99,6 +99,14 @@
 
 - **v1.0.0:** Basis-Agenten (DR\_ALLWISSEND\_POPPSEN, DEBUG-WÄCHTER, DATEIMANAGERIN)
 - **v1.1.0:** `GitPusher`-Agent & Optimierungsvorschläge hinzugefügt
+
+---
+
+## 8. info-tool-dateien.txt
+
+- Führt alle für Releases benötigten Dateien mitsamt Kurzbeschreibung.
+- Wenn Dateien in den Projektordnern angepasst werden, muss diese Liste ergänzt werden.
+- Neue Einträge beginnen mit einem ISO-Datum (YYYY-MM-DD) und werden am Anfang der Datei eingefügt.
 
 ---
 

@@ -1,0 +1,9 @@
+README.md – Projektübersicht und Hinweise zur Nutzung
+LICENSE – Rechtliche Lizenzinformationen
+requirements.txt – Benötigte Python-Pakete
+main.py – Startpunkt der Anwendung
+dev_start.py – Entwicklermodus mit Testlauf
+src/auth/login.py – Login-Funktionen
+src/database/db.py – SQLite-Datenbankzugriff
+src/gui/app.py – Haupt-GUI und Pluginlader
+tests/test_smoke.py – Beispielhafter Test
