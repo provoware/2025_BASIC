@@ -1,13 +1,13 @@
 # Project TODO
 
 ## Upcoming tasks
-- Implement plugin examples
 - Write automated tests
 - Improve folder management
 
 ## Completed tasks
 - Set up basic project structure
 - Created dashboard with left and right sidebars
+- Added example plugin under plugins/example.py
 - Integrated login dialog and automatic user directory creation
 
 ## Finished components

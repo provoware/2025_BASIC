@@ -2,7 +2,7 @@
 #
 Projektzusammenfassung: „Benutzerbasiertes Ordner- und Struktur-Tool mit Debug-Engine“
 🔧 Systemüberblick
-Ein modulares, offlinefähiges Tool für Linux mit GUI (PyQt6), das:
+Ein modulares, offlinefähiges Tool für Linux mit GUI (PyQt5), das:
 
 Benutzer mit 4-stelligem PIN verwaltet
 
