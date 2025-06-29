@@ -97,7 +97,9 @@ def run():
 
     window.show()
 
-    # Load plugins (if any)
-    load_plugins()
+    # Load plugins (if any) and initialize them with the main window
+    for plugin in load_plugins():
+        if hasattr(plugin, "init"):
+            plugin.init(window)
 
     return app.exec_()

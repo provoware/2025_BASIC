@@ -32,3 +32,6 @@ pytest -q
 Plugin modules placed under `plugins/` are loaded automatically at startup. This
 provides an easy way to extend the GUI without modifying existing code.
 
+An example plugin is included in `plugins/example.py`. It demonstrates how to
+add items to the interface after the main window has been created.
+
