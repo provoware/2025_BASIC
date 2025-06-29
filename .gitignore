@@ -1,0 +1,22 @@
+cat > .gitignore << 'EOF'
+# Python-Virtual Environment
+venv/
+
+# Byte-Compiled Caches
+__pycache__/
+*.py[cod]
+
+# SQLite-Datenbank (falls temporär)
+app.db
+
+# Log-Dateien
+*.log
+
+# GitHub Actions Workflows
+# (optional, falls du sie versionieren willst, lass den Ordner weg)
+# .github/workflows/
+
+# Tests-Output, Coverage, etc.
+.coverage
+htmlcov/
+EOF
