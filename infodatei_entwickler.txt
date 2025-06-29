@@ -43,3 +43,9 @@ Dieses Dokument fasst den aktuellen Stand des Projekts zusammen und richtet sich
 - Erstelle eine virtuelle Umgebung mit `python -m venv venv` und aktiviere sie vor der Installation der Abhängigkeiten.
 - Lies die Kommentare im Quellcode, um die Struktur nachzuvollziehen.
 - Erweiterungen können über eigene Module im Ordner `plugins/` eingebunden werden.
+
+### Weitere Hinweise für Laien
+- Sichere dir einen kostenlosen GitHub-Account und fork dieses Repository, um eigene Experimente zu machen.
+- Nutze einfache Editoren wie VS Code oder Thonny, falls du erst wenig Programmiererfahrung hast.
+- Die offizielle Python-Dokumentation unter <https://docs.python.org/de/> bietet einen guten Einstieg.
+

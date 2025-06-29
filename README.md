@@ -31,3 +31,20 @@ pytest -q
 ```
 
 Plugin modules placed under `plugins/` are loaded automatically at startup. This provides an easy way to extend the GUI without modifying existing code.
+
+## Änderungen auf GitHub hochladen
+Neue Features oder Dokumentationsanpassungen lassen sich mit Git nutzen:
+
+```bash
+git add .
+# Commit-Nachricht im Format "feat: beschreibung" oder "docs: ..."
+git commit -m "docs: erweitere README"
+# Remote-URL einmalig hinterlegen
+# git remote add origin https://github.com/<name>/2025_BASIC.git
+# und anschließend pushen
+
+git push origin main
+```
+
+Damit wird der aktuelle Stand im eigenen GitHub-Repository veröffentlicht.
+
