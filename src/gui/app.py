@@ -5,6 +5,16 @@ from pathlib import Path
 
 from auth.login import authenticate
 
+settings = QtCore.QSettings("2025_BASIC", "app")
+
+
+def get_setting(key: str, default=None):
+    return settings.value(key, default)
+
+
+def set_setting(key: str, value):
+    settings.setValue(key, value)
+
 
 def load_plugins(package_name="plugins"):
     """Load and return plugin modules from the given package."""
@@ -48,10 +58,48 @@ class LoginDialog(QtWidgets.QDialog):
 
 
 def ensure_user_folder(username: str, root: Path = Path("users")):
-    """Create a data folder for the given user if it doesn't exist."""
+    """Create a data folder for the given user along with standard subfolders."""
     user_dir = root / username
     user_dir.mkdir(parents=True, exist_ok=True)
+
+    # automatically create some common subfolders
+    for name in ["Dokumente", "Bilder"]:
+        (user_dir / name).mkdir(exist_ok=True)
+
     return user_dir
+
+
+def create_settings_tab():
+    """Return a QWidget with debug and path options."""
+    tab = QtWidgets.QWidget()
+    layout = QtWidgets.QFormLayout(tab)
+
+    debug_check = QtWidgets.QCheckBox()
+    debug_check.setChecked(bool(get_setting("debug", False)))
+    layout.addRow("Debug-Modus", debug_check)
+
+    path_edit = QtWidgets.QLineEdit(get_setting("user_path", "users"))
+    choose_btn = QtWidgets.QPushButton("Pfad wählen")
+
+    def choose_path():
+        directory = QtWidgets.QFileDialog.getExistingDirectory(tab, "Nutzerverzeichnis", path_edit.text())
+        if directory:
+            path_edit.setText(directory)
+
+    choose_btn.clicked.connect(choose_path)
+    path_row = QtWidgets.QHBoxLayout()
+    path_row.addWidget(path_edit)
+    path_row.addWidget(choose_btn)
+    layout.addRow("Nutzerpfad", path_row)
+
+    def update_settings():
+        set_setting("debug", debug_check.isChecked())
+        set_setting("user_path", path_edit.text())
+
+    debug_check.toggled.connect(update_settings)
+    path_edit.editingFinished.connect(update_settings)
+
+    return tab
 
 
 def run():
@@ -66,18 +114,28 @@ def run():
     if not authenticate(username, password):
         QtWidgets.QMessageBox.warning(None, "Fehler", "Login fehlgeschlagen")
         return 0
-    ensure_user_folder(username)
+    user_root = Path(get_setting("user_path", "users"))
+    ensure_user_folder(username, user_root)
+    debug_enabled = bool(get_setting("debug", False))
+    if debug_enabled:
+        print("Debug-Modus aktiviert")
 
     window = QtWidgets.QMainWindow()
     window.setWindowTitle("2025_BASIC App")
     window.resize(800, 600)
 
-    # Central dashboard widget
+    # Central area with tabs
+    tabs = QtWidgets.QTabWidget()
+
     dashboard = QtWidgets.QWidget()
     center_layout = QtWidgets.QVBoxLayout(dashboard)
     center_label = QtWidgets.QLabel("Dashboard", alignment=QtCore.Qt.AlignCenter)
     center_layout.addWidget(center_label)
-    window.setCentralWidget(dashboard)
+    tabs.addTab(dashboard, "Dashboard")
+
+    tabs.addTab(create_settings_tab(), "Einstellungen")
+
+    window.setCentralWidget(tabs)
 
     # Left sidebar (dockable)
     left_dock = QtWidgets.QDockWidget("Links", window)

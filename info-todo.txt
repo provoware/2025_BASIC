@@ -3,12 +3,13 @@
 ## Upcoming tasks
 - Implement plugin examples
 - Write automated tests
-- Improve folder management
 
 ## Completed tasks
 - Set up basic project structure
 - Created dashboard with left and right sidebars
 - Integrated login dialog and automatic user directory creation
+- Improved folder management with default "Dokumente" and "Bilder" folders
+- Added settings tab for debug mode and user path management
 
 ## Finished components
 - GUI framework using PyQt5
