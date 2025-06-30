@@ -1,12 +1,12 @@
 import sqlite3
 from pathlib import Path
 
-DB_PATH = Path("app.db")
+DATABASE_PATH = Path("app.db")
 
 
 def get_connection():
     """Return a SQLite connection to the application database."""
-    return sqlite3.connect(DB_PATH)
+    return sqlite3.connect(DATABASE_PATH)
 
 
 def init_db():

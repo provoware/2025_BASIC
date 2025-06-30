@@ -5,6 +5,7 @@ from pathlib import Path
 from PyQt5 import QtCore, QtWidgets
 
 from auth.login import authenticate
+from utils.folders import create_user_directory
 
 
 def load_plugins(package_name="plugins"):
@@ -48,11 +49,9 @@ class LoginDialog(QtWidgets.QDialog):
         return self.user_edit.text(), self.pass_edit.text()
 
 
-def ensure_user_folder(username: str, root: Path = Path("users")):
+def ensure_user_directory(username: str, root: Path = Path("users")) -> Path:
     """Create a data folder for the given user if it doesn't exist."""
-    user_dir = root / username
-    user_dir.mkdir(parents=True, exist_ok=True)
-    return user_dir
+    return create_user_directory(username, root)
 
 
 def run():
@@ -67,7 +66,7 @@ def run():
     if not authenticate(username, password):
         QtWidgets.QMessageBox.warning(None, "Fehler", "Login fehlgeschlagen")
         return 0
-    ensure_user_folder(username)
+    ensure_user_directory(username)
 
     window = QtWidgets.QMainWindow()
     window.setWindowTitle("2025_BASIC App")
