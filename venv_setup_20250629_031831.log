@@ -1,0 +1,75 @@
++ echo '>>> Logfile: /home/pppoppi/Projekte/2025_BASIC/venv_setup_20250629_031831.log'
+>>> Logfile: /home/pppoppi/Projekte/2025_BASIC/venv_setup_20250629_031831.log
++ cd /home/pppoppi/Projekte/2025_BASIC
++ echo '>>> Erstelle virtuelle Umgebung'
+>>> Erstelle virtuelle Umgebung
++ python3 -m venv venv
++ echo '>>> Aktiviere virtuelle Umgebung'
+>>> Aktiviere virtuelle Umgebung
++ source venv/bin/activate
+++ deactivate nondestructive
+++ '[' -n '' ']'
+++ '[' -n '' ']'
+++ hash -r
+++ '[' -n '' ']'
+++ unset VIRTUAL_ENV
+++ unset VIRTUAL_ENV_PROMPT
+++ '[' '!' nondestructive = nondestructive ']'
+++ '[' linux-gnu = cygwin ']'
+++ '[' linux-gnu = msys ']'
+++ export VIRTUAL_ENV=/home/pppoppi/Projekte/2025_BASIC/venv
+++ VIRTUAL_ENV=/home/pppoppi/Projekte/2025_BASIC/venv
+++ _OLD_VIRTUAL_PATH=/home/pppoppi/.local/bin:/home/pppoppi/.nvm/versions/node/v22.17.0/bin:/home/pppoppi/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+++ PATH=/home/pppoppi/Projekte/2025_BASIC/venv/bin:/home/pppoppi/.local/bin:/home/pppoppi/.nvm/versions/node/v22.17.0/bin:/home/pppoppi/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+++ export PATH
+++ '[' -n '' ']'
+++ '[' -z '' ']'
+++ _OLD_VIRTUAL_PS1=
+++ PS1='(venv) '
+++ export PS1
+++ VIRTUAL_ENV_PROMPT='(venv) '
+++ export VIRTUAL_ENV_PROMPT
+++ hash -r
++ echo '>>> Installiere Abhängigkeiten'
+>>> Installiere Abhängigkeiten
++ pip install -r requirements.txt
+Collecting PyQt5 (from -r requirements.txt (line 1))
+  Downloading PyQt5-5.15.11-cp38-abi3-manylinux_2_17_x86_64.whl.metadata (2.1 kB)
+Collecting SQLAlchemy (from -r requirements.txt (line 2))
+  Downloading sqlalchemy-2.0.41-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (9.6 kB)
+Collecting pluggy (from -r requirements.txt (line 3))
+  Downloading pluggy-1.6.0-py3-none-any.whl.metadata (4.8 kB)
+Collecting PyQt5-sip<13,>=12.15 (from PyQt5->-r requirements.txt (line 1))
+  Downloading PyQt5_sip-12.17.0-cp312-cp312-manylinux_2_5_x86_64.manylinux1_x86_64.whl.metadata (472 bytes)
+Collecting PyQt5-Qt5<5.16.0,>=5.15.2 (from PyQt5->-r requirements.txt (line 1))
+  Downloading PyQt5_Qt5-5.15.17-py3-none-manylinux2014_x86_64.whl.metadata (536 bytes)
+Collecting greenlet>=1 (from SQLAlchemy->-r requirements.txt (line 2))
+  Downloading greenlet-3.2.3-cp312-cp312-manylinux_2_24_x86_64.manylinux_2_28_x86_64.whl.metadata (4.1 kB)
+Collecting typing-extensions>=4.6.0 (from SQLAlchemy->-r requirements.txt (line 2))
+  Downloading typing_extensions-4.14.0-py3-none-any.whl.metadata (3.0 kB)
+Downloading PyQt5-5.15.11-cp38-abi3-manylinux_2_17_x86_64.whl (8.2 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 8.2/8.2 MB 1.8 MB/s eta 0:00:00
+Downloading sqlalchemy-2.0.41-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (3.3 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 3.3/3.3 MB 1.6 MB/s eta 0:00:00
+Downloading pluggy-1.6.0-py3-none-any.whl (20 kB)
+Downloading greenlet-3.2.3-cp312-cp312-manylinux_2_24_x86_64.manylinux_2_28_x86_64.whl (605 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 605.5/605.5 kB 1.5 MB/s eta 0:00:00
+Downloading PyQt5_Qt5-5.15.17-py3-none-manylinux2014_x86_64.whl (61.1 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 61.1/61.1 MB 1.6 MB/s eta 0:00:00
+Downloading PyQt5_sip-12.17.0-cp312-cp312-manylinux_2_5_x86_64.manylinux1_x86_64.whl (281 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 281.9/281.9 kB 1.1 MB/s eta 0:00:00
+Downloading typing_extensions-4.14.0-py3-none-any.whl (43 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 43.8/43.8 kB 252.0 kB/s eta 0:00:00
+Installing collected packages: PyQt5-Qt5, typing-extensions, PyQt5-sip, pluggy, greenlet, SQLAlchemy, PyQt5
+Successfully installed PyQt5-5.15.11 PyQt5-Qt5-5.15.17 PyQt5-sip-12.17.0 SQLAlchemy-2.0.41 greenlet-3.2.3 pluggy-1.6.0 typing-extensions-4.14.0
++ echo '>>> Starte Tests'
+>>> Starte Tests
++ pytest
+============================= test session starts ==============================
+platform linux -- Python 3.12.3, pytest-7.4.4, pluggy-1.4.0
+rootdir: /home/pppoppi/Projekte/2025_BASIC
+collected 0 items
+
+============================ no tests ran in 0.01s =============================
++ echo '>>> Fertig'
+>>> Fertig
