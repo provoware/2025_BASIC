@@ -1,0 +1,6 @@
+ID: 04
+Zeit: 2025-06-29T20:56:34+02:00
+Beschreibung: GUI-Updater (Stub) erzeugt
+Dateien:
+  - creatoros/updater/update_manager.py
+  - creatoros/tests/test_update_manager.py

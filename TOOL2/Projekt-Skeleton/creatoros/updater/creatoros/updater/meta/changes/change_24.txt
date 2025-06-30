@@ -1,0 +1,5 @@
+ID: 24
+Zeit: 2025-06-29T23:37:39+02:00
+Beschreibung: Updater-GUI-Panel + Sidebar
+Dateien:
+  - creatoros/interface/steelcore_dashboard.py

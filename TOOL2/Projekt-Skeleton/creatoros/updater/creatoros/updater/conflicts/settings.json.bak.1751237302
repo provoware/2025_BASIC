@@ -1,0 +1,69 @@
+{
+  "theme": "light",
+  "sidebar": false,
+  "modules": [
+    {
+      "active": true,
+      "name": "Modul 1",
+      "icon": ""
+    },
+    {
+      "active": true,
+      "name": "Modul 2",
+      "icon": ""
+    },
+    {
+      "active": true,
+      "name": "Modul 3",
+      "icon": ""
+    },
+    {
+      "active": true,
+      "name": "Modul 4",
+      "icon": ""
+    },
+    {
+      "active": true,
+      "name": "Modul 5",
+      "icon": ""
+    },
+    {
+      "active": true,
+      "name": "Modul 6",
+      "icon": ""
+    },
+    {
+      "active": true,
+      "name": "Modul 7",
+      "icon": ""
+    },
+    {
+      "active": true,
+      "name": "Modul 8",
+      "icon": ""
+    },
+    {
+      "active": true,
+      "name": "Modul 9",
+      "icon": ""
+    },
+    {
+      "active": true,
+      "name": "Modul 10",
+      "icon": ""
+    },
+    {
+      "active": true,
+      "name": "Modul 11",
+      "icon": ""
+    },
+    {
+      "active": true,
+      "name": "Modul 12",
+      "icon": ""
+    }
+  ],
+  "font_size": 16,
+  "n_cols": 4,
+  "n_rows": 3
+}

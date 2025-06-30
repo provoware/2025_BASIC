@@ -1,0 +1,6 @@
+ID: 20
+Zeit: 2025-06-29T23:17:38+02:00
+Beschreibung: GUI-Dashboard barrierefrei + modular
+Dateien:
+  - creatoros/interface/steelcore_dashboard.py
+  - start_gui_dashboard.sh

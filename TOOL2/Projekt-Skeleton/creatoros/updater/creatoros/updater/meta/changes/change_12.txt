@@ -1,0 +1,6 @@
+ID: 12
+Zeit: 2025-06-29T21:44:08+02:00
+Beschreibung: Theme-Manager mit Set/Get
+Dateien:
+  - creatoros/updater/creatoros/interface/theme_manager.py
+  - creatoros/updater/creatoros/tests/test_theme_manager.py

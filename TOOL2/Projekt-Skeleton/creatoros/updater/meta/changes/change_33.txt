@@ -1,0 +1,5 @@
+ID: 33
+Zeit: 2025-06-30T01:27:57+02:00
+Beschreibung: Panels im Grid statt Dock, Log-Dock & Reihenfolge repariert
+Dateien:
+  - creatoros/interface/steelcore_dashboard.py

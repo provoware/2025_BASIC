@@ -1,0 +1,10 @@
+ID: 19
+Zeit: 2025-06-29T23:08:36+02:00
+Beschreibung: Struktur-Fix + Schnellreparatur (mypy_cache, .gitignore)
+Dateien:
+  - .gitignore in Kernordnern
+  - README.md in Kernordnern
+  - start_fix_mypy.sh
+  - fix_mypy_cache.py
+  - start.sh verschoben
+  - Steel-Core_MAX_v2.sh verschoben

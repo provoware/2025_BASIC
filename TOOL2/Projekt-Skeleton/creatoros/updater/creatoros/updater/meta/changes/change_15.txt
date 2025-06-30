@@ -1,0 +1,5 @@
+ID: 15
+Zeit: 2025-06-29T21:58:28+02:00
+Beschreibung: GUI mit Live-Theme-Umschaltung
+Dateien:
+  - creatoros/updater/creatoros/updater/update_manager.py

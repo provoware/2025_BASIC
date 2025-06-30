@@ -1,0 +1,7 @@
+ID: 28
+Zeit: 2025-06-30T00:48:22+02:00
+Beschreibung: Profi-GUI mit Workspaces & Panel-Manager für Laien
+Dateien:
+  - creatoros/interface/steelcore_dashboard.py
+  - creatoros/interface/settings.json
+  - Profile in creatoros/interface/profiles

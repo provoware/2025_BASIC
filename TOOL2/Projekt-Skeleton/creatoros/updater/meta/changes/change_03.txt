@@ -1,0 +1,6 @@
+ID: 03
+Zeit: 2025-06-29T20:53:42+02:00
+Beschreibung: Platzhalter-Validator angelegt
+Dateien:
+  - creatoros/tools/validate_placeholders.py
+  - creatoros/tests/test_validate_placeholders.py

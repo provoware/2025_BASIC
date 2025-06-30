@@ -1,0 +1,8 @@
+ID: 07
+Zeit: 2025-06-29T21:05:01+02:00
+Beschreibung: Theme- & Barrierefreiheits-Stub
+Dateien:
+  - creatoros/interface/theme_manager.py
+  - creatoros/interface/themes/default_light.json
+  - creatoros/interface/themes/default_dark.json
+  - creatoros/tests/test_theme_manager.py

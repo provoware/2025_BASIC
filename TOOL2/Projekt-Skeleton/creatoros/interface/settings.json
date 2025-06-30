@@ -1,0 +1,16 @@
+{
+  "theme": "contrast",
+  "font_size": 12,
+  "grid": {
+    "rows": 3,
+    "cols": 4
+  },
+  "themes": [
+    "light",
+    "dark",
+    "contrast"
+  ],
+  "settings": {
+    "font_size": 12
+  }
+}

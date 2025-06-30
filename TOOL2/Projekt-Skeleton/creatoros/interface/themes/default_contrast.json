@@ -1,0 +1,8 @@
+{
+  "bg": "#000000",
+  "fg": "#FFFFFF",
+  "accent": "#FFD700",
+  "accent-hover": "#FFC107",
+  "panel-bg": "#1A1A1A",
+  "panel-shadow": "rgba(255,255,255,0.1)"
+}

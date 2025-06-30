@@ -1,0 +1,5 @@
+ID: 30
+Zeit: 2025-06-30T01:05:19+02:00
+Beschreibung: Fix QAction Import aus QtGui statt QtWidgets
+Dateien:
+  - creatoros/interface/steelcore_dashboard.py

@@ -1,0 +1,6 @@
+ID: 18
+Zeit: 2025-06-29T22:50:52+02:00
+Beschreibung: Intelligentes Struktur-Sortierwerkzeug (smart_mover)
+Dateien:
+  - creatoros/tools/smart_mover.py
+  - start_smart_sortfix.sh

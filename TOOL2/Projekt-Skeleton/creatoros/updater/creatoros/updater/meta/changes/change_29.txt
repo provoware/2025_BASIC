@@ -1,0 +1,7 @@
+ID: 29
+Zeit: 2025-06-30T00:57:12+02:00
+Beschreibung: Profi-GUI Bugfix & Optimierung für Laien
+Dateien:
+  - creatoros/interface/steelcore_dashboard.py
+  - start_gui_dashboard.sh
+  - creatoros/interface/settings.json (wenn neu)

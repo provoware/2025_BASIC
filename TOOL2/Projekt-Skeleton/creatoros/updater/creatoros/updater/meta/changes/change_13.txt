@@ -1,0 +1,6 @@
+ID: 13
+Zeit: 2025-06-29T21:47:00+02:00
+Beschreibung: Plugin-Manager mit Laufzeitprüfung
+Dateien:
+  - creatoros/updater/creatoros/modules/plugin_manager.py
+  - creatoros/updater/creatoros/tests/test_plugin_manager.py

@@ -1,0 +1,6 @@
+ID: 14
+Zeit: 2025-06-29T21:54:57+02:00
+Beschreibung: Logging-Modul mit Levels
+Dateien:
+  - creatoros/updater/creatoros/system/logger.py
+  - creatoros/updater/creatoros/tests/test_logger.py

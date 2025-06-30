@@ -1,0 +1,204 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+# Update 33: Panels ins Grid, Log-Dock & Reihenfolge fixen
+BASE=creatoros/updater
+GUI=creatoros/interface/steelcore_dashboard.py
+META=$BASE/meta/changes
+INFO=$BASE/info-stand.txt
+SUMS=$BASE/CHECKSUMS.txt
+
+echo "=== Update 33: Grid-Panels & Log-Dock Fix ==="
+
+# 1) Backup vorhandener GUI
+mkdir -p "$BASE/conflicts"
+cp "$GUI" "$BASE/conflicts/steelcore_dashboard.py.bak.$(date +%s)"
+echo "⚠️ Backup: $GUI → conflicts/"
+
+# 2) Neue GUI schreiben
+cat << 'EOF' > "$GUI"
+# -*- coding: utf-8 -*-
+import sys, os, json, datetime
+from PyQt6.QtWidgets import (
+    QApplication, QMainWindow, QWidget, QGridLayout, QDockWidget,
+    QToolBar, QComboBox, QMessageBox, QFileDialog, QLabel,
+    QStatusBar, QListWidget, QVBoxLayout, QFrame
+)
+from PyQt6.QtGui import QAction
+from PyQt6.QtCore import Qt
+
+def resource_path(rel):
+    return os.path.join(os.path.dirname(__file__), rel)
+
+SETTINGS_FILE = resource_path("settings.json")
+PROFILES_DIR = resource_path("profiles")
+os.makedirs(PROFILES_DIR, exist_ok=True)
+
+DEFAULT_SETTINGS = {
+    "theme": "light", "font_size": 12,
+    "grid": {"rows":3, "cols":4},
+}
+
+class Workspace:
+    def __init__(self,name):
+        self.name=name
+        self.file=os.path.join(PROFILES_DIR,f"{name}.json")
+        if os.path.isfile(self.file):
+            self.data=json.load(open(self.file,encoding="utf-8"))
+        else:
+            self.data={"name":name,"panels":[],"log":[],"last_saved":None}
+        self.log(f"Workspace '{self.name}' geladen")
+    def save(self):
+        self.data["last_saved"]=datetime.datetime.now().isoformat()
+        json.dump(self.data,open(self.file,"w",encoding="utf-8"),indent=2)
+        self.log("Workspace gespeichert")
+    def log(self,msg):
+        ts=datetime.datetime.now().strftime("%H:%M:%S")
+        entry=f"[{ts}] {msg}"
+        self.data["log"].insert(0,entry)
+        if len(self.data["log"])>100: self.data["log"].pop()
+        return entry
+
+class PanelWidget(QWidget):
+    def __init__(self,cfg,parent=None):
+        super().__init__(parent)
+        self.cfg=cfg
+        self.setFrameShape = QFrame.StyledPanel
+        frame=QFrame(self)
+        frame.setFrameShape(QFrame.Shape.StyledPanel)
+        lay=QVBoxLayout(self)
+        lay.addWidget(QLabel(f"<b>Typ:</b> {cfg.get('type','–')}"))
+        lay.addWidget(QLabel(f"<b>Einstellungen:</b> {cfg.get('config','–')}"))
+        lay.setContentsMargins(5,5,5,5)
+
+class MainWindow(QMainWindow):
+    def __init__(self):
+        super().__init__()
+        self.setWindowTitle("Steel-Core Profi-Dashboard")
+        self.resize(1280,900)
+        self.statusBar().showMessage("Starte...")
+        # Settings & Theme
+        self.settings=self.load_settings()
+        self.apply_theme()
+        # Workspaces
+        names=[f[:-5] for f in os.listdir(PROFILES_DIR) if f.endswith(".json")]
+        if not names: names=["Default"]
+        self.current_ws=Workspace(names[0])
+        # Toolbar
+        tb=QToolBar("Haupt"); self.addToolBar(tb)
+        self.cb=QComboBox(); self.cb.addItems(names)
+        self.cb.currentTextChanged.connect(self.switch_ws)
+        tb.addWidget(self.cb)
+        tb.addAction("Neu", self.action_new_ws)
+        tb.addAction("Duplizieren", self.action_dup_ws)
+        tb.addAction("Löschen", self.action_del_ws)
+        tb.addSeparator()
+        tb.addAction("Theme", self.toggle_theme)
+        tb.addAction("Speichern", self.current_ws.save)
+        # Central Grid
+        self.central=QWidget()
+        self.grid=QGridLayout(self.central)
+        self.grid.setContentsMargins(10,10,10,10)
+        self.setCentralWidget(self.central)
+        # Log-Dock
+        dock=QDockWidget("Logverlauf",self)
+        self.log_list=QListWidget()
+        dock.setWidget(self.log_list)
+        self.addDockWidget(Qt.DockWidgetArea.RightDockWidgetArea,dock)
+        # Load panels
+        self.load_panels()
+
+    def load_settings(self):
+        if os.path.isfile(SETTINGS_FILE):
+            return json.load(open(SETTINGS_FILE,encoding="utf-8"))
+        return DEFAULT_SETTINGS.copy()
+    def save_settings(self):
+        json.dump(self.settings,open(SETTINGS_FILE,"w",encoding="utf-8"),indent=2)
+    def apply_theme(self):
+        pal=self.palette()
+        if self.settings.get("theme")=="dark":
+            pal.setColor(self.backgroundRole(),Qt.GlobalColor.black)
+            pal.setColor(self.foregroundRole(),Qt.GlobalColor.white)
+        else:
+            pal.setColor(self.backgroundRole(),Qt.GlobalColor.white)
+            pal.setColor(self.foregroundRole(),Qt.GlobalColor.black)
+        self.setPalette(pal)
+
+    def switch_ws(self,name):
+        self.current_ws=Workspace(name)
+        self.load_panels()
+
+    def action_new_ws(self):
+        fn,_=QFileDialog.getSaveFileName(self,"Neuer Workspace",PROFILES_DIR,"JSON (*.json)")
+        if fn:
+            base=os.path.splitext(os.path.basename(fn))[0]
+            self.current_ws=Workspace(base)
+            self.cb.addItem(base); self.cb.setCurrentText(base)
+            self.load_panels()
+
+    def action_dup_ws(self):
+        base=self.current_ws.name+"_copy"
+        ws=Workspace(base); ws.data=self.current_ws.data.copy(); ws.save()
+        self.cb.addItem(base); self.cb.setCurrentText(base)
+        self.load_panels()
+
+    def action_del_ws(self):
+        if QMessageBox.question(self,"Löschen?",f"Lösche '{self.current_ws.name}'?")\
+           == QMessageBox.StandardButton.Yes:
+            os.remove(self.current_ws.file)
+            idx=self.cb.currentIndex(); self.cb.removeItem(idx)
+            name=self.cb.currentText()
+            self.current_ws=Workspace(name)
+            self.load_panels()
+
+    def load_panels(self):
+        # clear grid
+        while self.grid.count():
+            w=self.grid.takeAt(0).widget()
+            if w: w.deleteLater()
+        rows=self.settings["grid"]["rows"]
+        cols=self.settings["grid"]["cols"]
+        panels=self.current_ws.data.get("panels",[])
+        idx=0
+        for r in range(rows):
+            for c in range(cols):
+                cfg=panels[idx] if idx<len(panels) else {"type":"leer","title":"+"}
+                widget=PanelWidget(cfg,self)
+                self.grid.addWidget(widget,r,c)
+                idx+=1
+        # refresh log
+        self.log_list.clear()
+        for entry in self.current_ws.data.get("log",[]):
+            self.log_list.addItem(entry)
+
+    def toggle_theme(self):
+        t="dark" if self.settings["theme"]=="light" else "light"
+        self.settings["theme"]=t; self.apply_theme(); self.save_settings()
+        self.current_ws.log(f"Theme → {t}")
+        self.load_panels()
+
+if __name__=="__main__":
+    app=QApplication(sys.argv)
+    w=MainWindow(); w.show()
+    sys.exit(app.exec())
+EOF
+
+echo "✔ steelcore_dashboard.py aktualisiert."
+
+# 3) Syntax-Check
+echo "▶️ Syntax-Validierung…"
+python3 -m py_compile "$GUI" && echo "   ✔ Keine Syntaxfehler." || { echo "❌ Syntax-Fehler!"; exit 1; }
+
+# 4) Metadaten & Checksum
+STAMP=$(date --iso-8601=seconds)
+cat << EOF > "$META/change_33.txt"
+ID: 33
+Zeit: $STAMP
+Beschreibung: Panels im Grid statt Dock, Log-Dock & Reihenfolge repariert
+Dateien:
+  - $GUI
+EOF
+echo "Update 33 applied $STAMP" >> "$INFO"
+md5sum "$GUI" >> "$SUMS"
+
+echo "✅ Update 33 erfolgreich abgeschlossen."

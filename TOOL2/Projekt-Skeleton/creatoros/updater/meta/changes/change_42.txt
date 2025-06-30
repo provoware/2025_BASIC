@@ -1,0 +1,5 @@
+ID: 42
+Zeit: 2025-06-30T02:44:47+02:00
+Beschreibung: QAction-Import für PySide6 korrigiert (aus QtWidgets entfernt, zu QtGui verschoben)
+Dateien:
+  - creatoros/interface/steelcore_dashboard.py

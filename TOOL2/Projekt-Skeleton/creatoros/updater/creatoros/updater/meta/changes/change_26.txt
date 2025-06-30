@@ -1,0 +1,6 @@
+ID: 26
+Zeit: 2025-06-30T00:03:59+02:00
+Beschreibung: Responsive GUI, Update-Panel Bugfix, Barrierefreiheit, modulare Settings
+Dateien:
+  - creatoros/interface/steelcore_dashboard.py
+  - creatoros/interface/settings.json

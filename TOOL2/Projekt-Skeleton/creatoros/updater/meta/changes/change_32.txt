@@ -1,0 +1,10 @@
+ID: 32
+Zeit: 2025-06-30T01:24:54+02:00
+Beschreibung: Verschiebe Interface-Dateien ins Projekt-Root (creatoros/interface)
+Dateien:
+  - creatoros/interface/steelcore_dashboard.py
+  - creatoros/interface/settings.json
+  - creatoros/interface/theme_manager.py
+  - creatoros/interface/dashboard.log
+  - creatoros/interface/themes/
+  - creatoros/interface/profiles/

@@ -1,0 +1,5 @@
+ID: 27
+Zeit: 2025-06-30T00:15:20+02:00
+Beschreibung: Fontsize-Button-Fix, zwei Buttons (A+/A–), robust
+Dateien:
+  - creatoros/interface/steelcore_dashboard.py

@@ -1,0 +1,7 @@
+ID: 16
+Zeit: 2025-06-29T22:17:27+02:00
+Beschreibung: Cleanup-Modul zur Analyse
+Dateien:
+  - creatoros/updater/creatoros/system/cleanup_manager.py
+  - creatoros/updater/creatoros/tests/test_cleanup_manager.py
+  - start_cleanup.sh

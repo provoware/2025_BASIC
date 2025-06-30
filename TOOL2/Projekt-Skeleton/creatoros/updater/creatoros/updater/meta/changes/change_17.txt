@@ -1,0 +1,7 @@
+ID: 17
+Zeit: 2025-06-29T22:35:06+02:00
+Beschreibung: Status-Dashboard-GUI integriert
+Dateien:
+  - creatoros/updater/creatoros/updater/update_manager.py
+  - creatoros/interface/status_dashboard.py
+  - start_dashboard.sh

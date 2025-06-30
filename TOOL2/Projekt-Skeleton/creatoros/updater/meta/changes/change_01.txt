@@ -1,0 +1,7 @@
+ID: 01
+Zeit: 2025-06-29T20:43:55+02:00
+Beschreibung: Debug-Modus & Auto-Repair initialisiert
+Dateien:
+  - creatoros/start_debug.py
+  - creatoros/modules/auto_repair.py
+  - creatoros/tests/test_auto_repair.py

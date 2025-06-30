@@ -1,0 +1,5 @@
+ID: 38
+Zeit: 2025-06-30T01:46:47+02:00
+Beschreibung: Self-Heal für En-Dash und f-String-Patterns in steelcore_dashboard.py
+Dateien:
+  - creatoros/interface/steelcore_dashboard.py

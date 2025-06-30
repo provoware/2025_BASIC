@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+set -euo pipefail
+# aus Projekt-Root ausführen!
+python3 creatoros/interface/steelcore_dashboard.py

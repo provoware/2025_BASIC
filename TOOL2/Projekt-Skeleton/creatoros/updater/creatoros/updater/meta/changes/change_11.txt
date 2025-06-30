@@ -1,0 +1,6 @@
+ID: 11
+Zeit: 2025-06-29T21:40:46+02:00
+Beschreibung: SQLite-Modul mit Tabelle & Test
+Dateien:
+  - creatoros/updater/creatoros/modules/database.py
+  - creatoros/updater/creatoros/tests/test_database.py

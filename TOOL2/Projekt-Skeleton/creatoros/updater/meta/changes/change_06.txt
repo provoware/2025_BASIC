@@ -1,0 +1,6 @@
+ID: 06
+Zeit: 2025-06-29T21:02:32+02:00
+Beschreibung: Sicherheits-Sandbox vorbereitet
+Dateien:
+  - creatoros/plugins/sandbox.py
+  - creatoros/tests/test_sandbox.py

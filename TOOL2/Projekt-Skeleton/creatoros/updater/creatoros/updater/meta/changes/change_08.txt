@@ -1,0 +1,6 @@
+ID: 08
+Zeit: 2025-06-29T21:22:38+02:00
+Beschreibung: Auto-Repair mit Strukturprüfung implementiert
+Dateien:
+  - creatoros/updater/creatoros/modules/auto_repair.py
+  - creatoros/updater/creatoros/tests/test_auto_repair.py

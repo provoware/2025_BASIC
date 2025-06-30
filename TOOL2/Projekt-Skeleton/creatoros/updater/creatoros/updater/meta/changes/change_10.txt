@@ -1,0 +1,6 @@
+ID: 10
+Zeit: 2025-06-29T21:37:18+02:00
+Beschreibung: GUI-Updater mit Qt6 und Interaktivität
+Dateien:
+  - creatoros/updater/creatoros/updater/update_manager.py
+  - creatoros/updater/creatoros/tests/test_update_manager.py

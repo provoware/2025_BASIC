@@ -1,0 +1,6 @@
+ID: 09
+Zeit: 2025-06-29T21:25:36+02:00
+Beschreibung: Platzhalter-Checker mit Tests implementiert
+Dateien:
+  - creatoros/updater/creatoros/tools/validate_placeholders.py
+  - creatoros/updater/creatoros/tests/test_validate_placeholders.py

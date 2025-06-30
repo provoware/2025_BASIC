@@ -1,0 +1,5 @@
+ID: 31
+Zeit: 2025-06-30T01:21:03+02:00
+Beschreibung: Verschiebe start_gui_dashboard.sh ins Projekt-Root
+Dateien:
+  - start_gui_dashboard.sh

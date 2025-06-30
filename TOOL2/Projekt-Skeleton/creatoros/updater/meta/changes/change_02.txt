@@ -1,0 +1,6 @@
+ID: 02
+Zeit: 2025-06-29T20:48:17+02:00
+Beschreibung: Strukturprüfung & Autorepair-Modul
+Dateien:
+  - creatoros/system/check_structure.py
+  - creatoros/tests/test_check_structure.py
