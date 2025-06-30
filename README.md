@@ -19,6 +19,16 @@ package can extend the interface.
 
 Development tasks are tracked in `info-todo.txt`.
 
+A convenience CLI script `tool.py` bundles common actions.
+
+Example usage:
+```bash
+python tool.py run
+python tool.py create-user alice
+python tool.py test
+python tool.py list-plugins
+```
+
 Run the application with:
 
 ```bash
