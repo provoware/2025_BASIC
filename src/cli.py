@@ -14,6 +14,7 @@ def run_cli(argv=None) -> int:
     user_parser = subparsers.add_parser("create-user", help="Create a user folder")
     user_parser.add_argument("username")
     subparsers.add_parser("list-plugins", help="Show available plugins")
+    subparsers.add_parser("cleanup", help="Remove cached bytecode")
 
     args = parser.parse_args(argv)
 
@@ -35,6 +36,12 @@ def run_cli(argv=None) -> int:
             print("\n".join(plugins))
         else:
             print("No plugins installed")
+        return 0
+    if args.command == "cleanup":
+        from utils.cleanup import cleanup_directory
+
+        cleanup_directory()
+        print("Removed __pycache__ folders")
         return 0
 
     parser.print_help()

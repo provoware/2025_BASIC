@@ -27,6 +27,7 @@ python tool.py run
 python tool.py create-user alice
 python tool.py test
 python tool.py list-plugins
+python tool.py cleanup
 ```
 
 Run the application with:
