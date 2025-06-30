@@ -52,3 +52,14 @@ If you are new to Python or this project, these steps will help you get up and r
 6. New users are stored in the `app.db` SQLite database inside the `users` table. You can manage them with any SQLite client or a small Python script.
 
 The `logs/` directory is created automatically when running `dev_start.py` and contains troubleshooting information.
+
+### Next Steps for Beginners
+
+- Try creating a simple plugin file under `plugins/`. On the next run the
+  application will import it automatically so you can explore how plugins work.
+- If the app complains about missing modules, double-check that your virtual
+  environment is activated before installing packages or running scripts.
+- Use a graphical SQLite browser or the built-in `sqlite3` command-line tool to
+  inspect the `app.db` database and see how user data is stored.
+- Review `info-todo.txt` for small feature ideas you can implement to practice
+  working with the codebase.
